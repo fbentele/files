@@ -1,0 +1,11 @@
+# Disable Directory Listing
+Options -Indexes
+
+# Hide the files Folder from the public
+RedirectMatch 404 /files
+
+# Hide file extension from public
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php
