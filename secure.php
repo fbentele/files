@@ -34,7 +34,7 @@ function checkUser($username, $password){
 }
 
 function hashPlaintext($pwd){
-	return crypt($pwd, "UMBQMybimHrDWkqFXnhrfBEKcdz4X3dKAuKnHb");
+	return crypt($pwd, SECURE_HASH);
 }
 
 function changePasswordForUser($username, $oldpassword, $newpassword){
