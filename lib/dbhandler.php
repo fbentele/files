@@ -6,6 +6,7 @@ require_once('./lib/utils.php');
 require_once('./lib/settings.php');
 
 R::setup('sqlite:./lib/sql.db');
+// R::setup('mysql:host=localhost;dbname=mydatabase', 'user','password');
 
 function saveObject($filename){
 	$path_parts = pathinfo($filename, PATHINFO_EXTENSION);
