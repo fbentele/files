@@ -4,7 +4,7 @@
 
 body {
     font-family: 'Palatino Linotype', Palatino, Georgia, serif;
-    background-color: #d8d8d8;
+    background-color: #ececec;
 }
 
 #link {
@@ -22,7 +22,7 @@ body {
     padding: 5px 15px;
     border-radius: 10px;
     background-color: #ffffff;
-    width: 300px;
+    width: 600px;
     min-height: 250px;
 }
 
@@ -55,10 +55,21 @@ body {
     min-height: 100px;
 }
 
+.right {
+    float: right;
+}
+.left {
+    float: left;
+}
+.clear:after {
+    clear: both;
+    content: '';
+    display: block;
+}
 #footer {
     color: #535353;
     font-size: 0.8em;
-    width: 300px;
+    width: 600px;
     margin: 20px auto;
     text-align: right;
 }
@@ -91,7 +102,11 @@ a:hover {
     color: #000000;
     text-decoration: none;
 }
-
+.error {
+    color: #ec1714;
+    border: #ec1714 1px solid;
+    padding: 5px;
+}
 #success {
     display: none;
     color: #27a82b;

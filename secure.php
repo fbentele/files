@@ -36,9 +36,7 @@ function checkUser( $username, $password ) {
 	}
 }
 
-function hashPlaintext( $pwd ) {
-	return crypt( $pwd, SECURE_HASH );
-}
+
 
 function changePasswordForUser( $username, $oldpassword, $newpassword ) {
 	if ( checkUser( $username, $oldpassword ) ) {
@@ -48,10 +46,6 @@ function changePasswordForUser( $username, $oldpassword, $newpassword ) {
 	}
 }
 
-function init() {
-	// intially insert admin user
-	echo insertUser( "admin", "Administrator", hashPlaintext( "1234" ), "", "admin" );
-}
 
 if ( isset( $_POST['username'] ) && isset( $_POST['password'] ) ) {
 	login( $_POST['username'], $_POST['password'] );

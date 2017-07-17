@@ -12,18 +12,30 @@ require_once( __DIR__ . '/lib/dbhandler.php' );
     <link rel="stylesheet" href="./lib/styles.css"/>
 </head>
 <body>
+
 <div id="content">
-    <p>Quickly share files with others.<br/>Neither guaranteed.<br/>Nor secure.</p>
-    <div id="link">Share this link: <br/></div>
-    <form action="/uploader.php" class="dropzone" id="thedropzone">Drop Files here, or click to choose
+    <div class="clear">
+        <h1 class="left">Dokumente</h1>
+        <div class="right">
+            <img src="img/logo-stsg.jpg" alt="Logo Stadt St. Gallen">
+        </div>
+    </div>
+
+	<?php
+
+	if ( ! file_exists( UPLOAD_FOLDER ) && ! is_writable( UPLOAD_FOLDER ) ) {
+		echo '<div class="error">Der Upload Ordner kann nicht beschrieben werden, oder es gibt ihn nicht.</div>';
+	}
+
+	?>
+    <p>Einfach Dokumente und Dateien Teilen.<br/>Öffentlich mit Link.</p>
+    <div id="link">Link zum teilen: <br/></div>
+    <form action="/uploader.php" class="dropzone" id="thedropzone">Datei hier hineinziehen, oder klicken zum auswählen.
         <div id="success"><span>✔</span></div>
         <span class="small">(max 100 MB)</span></form>
 </div>
 <div id="footer">
-    <p>~Flo, 2013<br/>
-        Using <a href="http://jquery.com/" target="_blank">jQuery</a>, <a href="http://www.redbeanphp.com/" target="_blank">RedBeanPHP</a> and <a href="http://www.dropzonejs.com/"
-                                                                                                                                                  target="_blank">dropzone.js</a>
-    </p>
+    <p><a href="http://www.alea-iacta.ch">alea iacta digital gmbh</a></p>
 </div>
 <script type="text/javascript">
     Dropzone.options.thedropzone = {

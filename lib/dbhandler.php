@@ -144,3 +144,7 @@ function filesWithNoId(){
     }
     return $fileswithnoid;
 }
+
+function hashPlaintext( $pwd ) {
+	return crypt( $pwd, SECURE_HASH );
+}
